@@ -1,0 +1,10 @@
+{% block title %}List of Countries{% endblock %}
+
+{% block content %}
+    <h1>List of Countries</h1>
+    <ul>
+        {% for country in countries %}
+            <li>{{ country.name }} ({{ country.code }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
