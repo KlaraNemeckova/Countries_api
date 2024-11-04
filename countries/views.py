@@ -1,11 +1,12 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def home(request):
-    return HttpResponse("Main page")
+    return render(request, "home.html") 
 
 def countries(request):
-    return HttpResponse("This is a list of countries of the world!")
+    pass
 
 def id(request):
-    return HttpResponse('8')
+    return render(request, "country_detail.html") 
