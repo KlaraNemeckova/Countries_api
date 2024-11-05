@@ -1,10 +1,29 @@
-{% block title %}List of Countries{% endblock %}
+{% extends 'master.html' %}
+
+{% block title %}Countries List{% endblock %}
 
 {% block content %}
-    <h1>List of Countries</h1>
-    <ul>
+<h2>Countries List</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country Code</th>
+            <th>Group ID</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for country in countries %}
-            <li>{{ country.name }} ({{ country.code }})</li>
+        <tr>
+            <td>{{ country.id }}</td>
+            <td>{{ country.name }}</td>
+            <td>{{ country.country_code }}</td>
+            <td>{{ country.group_id }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+</table>
 {% endblock %}
+

@@ -23,7 +23,7 @@ def countries_list(request):
         return Response(serializer.data)
     
     elif request.method == 'POST':
-        if isinstance(request.data, list): # zjistí, zda jsou vkládaná data seznam 
+        if isinstance(request.data, list): 
             serializer = CountryCreateSerializer(data=request.data, many=True)
         else:
             serializer = CountryCreateSerializer(data=request.data)
