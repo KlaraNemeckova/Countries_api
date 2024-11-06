@@ -18,7 +18,9 @@
         {% for country in countries %}
         <tr>
             <td>{{ country.id }}</td>
-            <td>{{ country.name }}</td>
+            <td>
+                <a href="{% url 'country_detail' country.id %}">{{ country.name }}</a>
+            </td>
             <td>{{ country.country_code }}</td>
             <td>{{ country.group_id }}</td>
         </tr>
