@@ -1,12 +1,12 @@
-Api_challenge
+# Api_challenge
 
 The Api_challenge API is a Django-based RESTful API designed to manage country data. It allows users to create, edit, and retrieve information about countries.
 
-Introduction
+## Introduction
 
 The API is built with Django. It utilizes Django REST framework to expose the country data through a RESTful API.
 
-Features
+## Features
 
 - List all countries with their details
 - Retrieve information about a specific country by its ID
@@ -14,7 +14,7 @@ Features
 - Update country details
 - Delete a country
 
-Setup
+## Setup
 
 1. Clone the repository:
 
@@ -23,12 +23,12 @@ cd api_challenge
 
 2. Create a virtual environment and activate it:
 
-python3 -m venv env
+```python3 -m venv env
 # For Windows:
 . env/Scripts/activate
 
 # For macOS/Linux:
-source . env/bin/activate
+source . env/bin/activate```
 
 3. Install the required dependencies:
 
@@ -46,8 +46,8 @@ In the DATABASES section, ensure the following configuration is in place:
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # This will create the SQLite database in the project folder
+        'ENGINE': 'django.db.backends.sqlite3',  # Používáme SQLite jako databázový engine
+        'NAME': BASE_DIR / 'db.sqlite3',  # To vytvoří SQLite databázi v adresáři projektu
     }
 }
 
@@ -67,7 +67,7 @@ python manage.py runserver
 
 The API will now be accessible at http://localhost:8000/.
 
-API Endpoints
+## API Endpoints
 
 The Country Management API provides the following endpoints for interacting with country data:
 
@@ -78,7 +78,7 @@ PUT /countries/{id}/: Update the details of a specific country by its ID.
 DELETE /countries/{id}/: Delete a specific country by its ID.
 
 
-Example Usage:
+## Example Usage:
 
 1. To retrieve all countries:
 
@@ -145,7 +145,7 @@ Open Postman and create a new DELETE request.
 Set the URL to http://localhost:8000/countries/1/ (where 1 is the ID of the country you want to delete).
 Click Send to delete the country.
 
-Contributing
+## Contributing
 
 Contributions are welcome! If you encounter any issues or would like to add new features, feel free to open a pull request.
 
@@ -157,6 +157,7 @@ Make sure to add tests for any new features or bug fixes.
 Ensure your code is well-documented.
 Submit a pull request describing your changes.
 
-License
+## License
 
-This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0/) - see the LICENSE file for details.
+
