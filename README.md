@@ -16,10 +16,13 @@ The API is built with Django. It utilizes Django REST framework to expose the co
 
 ## Setup
 
-1. Clone the repository:
+### 1. Clone the repository:
 
-git clone https://github.com/KlaraNemeckova/api_challenge.git
-cd api_challenge
+```
+
+git clone https://github.com/KlaraNemeckova/api_challenge.git cd api_challenge
+
+```
 
 2. Create a virtual environment and activate it:
 
@@ -100,7 +103,7 @@ The Country Management API provides the following endpoints for interacting with
 
 1. To retrieve all countries:
 
-cURL:
+- cURL:
 
 ```
 
@@ -108,7 +111,7 @@ curl -X GET http://localhost:8000/countries/
 
 ```
 
-Postman:
+- Postman:
 
 Open Postman and create a new GET request.
 Set the URL to http://localhost:8000/countries/.
@@ -116,7 +119,7 @@ Click Send to retrieve the list of countries.
 
 2. To create a new country:
 
-cURL:
+- cURL:
 
 ```
 
@@ -124,7 +127,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"name":"Czech Republic", "
 
 ```
 
-Postman:
+- Postman:
 
 Open Postman and create a new POST request.
 Set the URL to http://localhost:8000/countries/.
@@ -143,7 +146,7 @@ Click Send to create the new country.
 
 3. To update a country:
 
-cURL:
+- cURL:
 
 ```
 
@@ -151,7 +154,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"name":"Czech republic", "c
 
 ```
 
-Postman:
+- Postman:
 
 Open Postman and create a new PUT request.
 Set the URL to http://localhost:8000/countries/1/ (where 1 is the ID of the country you want to update).
@@ -170,7 +173,7 @@ Click Send to update the country.
 
 4. To delete a country:
 
-cURL:
+- cURL:
 
 ```
 
@@ -178,7 +181,7 @@ curl -X DELETE http://localhost:8000/countries/1/
 
 ```
 
-Postman:
+- Postman:
 
 Open Postman and create a new DELETE request.
 Set the URL to http://localhost:8000/countries/1/ (where 1 is the ID of the country you want to delete).
