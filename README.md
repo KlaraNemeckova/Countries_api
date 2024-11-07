@@ -1,6 +1,6 @@
 # Api_challenge
 
-The Api_challenge API is a Django-based RESTful API designed to manage country data. It allows users to create, edit, and retrieve information about countries.
+The **Api_challenge** API is a Django-based RESTful API designed to manage country data. It allows users to create, edit, and retrieve information about countries.
 
 ## Introduction
 
@@ -49,9 +49,9 @@ This project uses SQLite as the database, which comes pre-configured with Django
 
 In the settings.py file, the database is already configured to use SQLite by default. You can confirm or modify the settings as follows:
 
-Open the api_challenge/settings.py file.
+- Open the api_challenge/settings.py file.
 
-In the DATABASES section, ensure the following configuration is in place:
+- In the DATABASES section, ensure the following configuration is in place:
 
 ```
 
