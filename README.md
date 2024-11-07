@@ -23,12 +23,15 @@ cd api_challenge
 
 2. Create a virtual environment and activate it:
 
-```python3 -m venv env
+```
+python3 -m venv env
 # For Windows:
 . env/Scripts/activate
 
 # For macOS/Linux:
-source . env/bin/activate```
+source . env/bin/activate 
+
+```
 
 3. Install the required dependencies:
 
