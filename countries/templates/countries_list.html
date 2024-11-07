@@ -3,6 +3,23 @@
 {% block title %}Countries List{% endblock %}
 
 {% block content %}
+
+<style>
+    .table th, .table td {
+        text-align: center;
+        padding: 8px 15px; 
+    }
+
+    .table th:nth-child(3), .table td:nth-child(3) {
+        padding-right: 25px; 
+    }
+
+    .table th:nth-child(2), .table td:nth-child(2) {
+        padding-left: 15px; 
+    }
+</style>
+
+
 <h2>Countries List</h2>
 
 <table class="table table-striped">
@@ -20,7 +37,7 @@
             <td>{{ country.id }}</td>
             <td>
                 <a href="{% url 'country_detail' country.id %}">{{ country.name }}</a>
-            </td>
+            </td>            
             <td>{{ country.country_code }}</td>
             <td>{{ country.group_id }}</td>
         </tr>
