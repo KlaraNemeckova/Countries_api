@@ -16,7 +16,7 @@ The API is built with Django. It utilizes Django REST framework to expose the co
 
 ## Setup
 
-### 1. Clone the repository:
+**1. Clone the repository:**
 
 ```
 
@@ -24,7 +24,7 @@ git clone https://github.com/KlaraNemeckova/api_challenge.git cd api_challenge
 
 ```
 
-2. Create a virtual environment and activate it:
+**2. Create a virtual environment and activate it:**
 
 ```
 python3 -m venv env
@@ -36,14 +36,14 @@ source . env/bin/activate
 
 ```
 
-3. Install the required dependencies:
+**3. Install the required dependencies:**
 
 ```
 pip install -r requirements.txt
 
 ```
 
-4. Configure the database settings:
+**4. Configure the database settings:**
 
 This project uses SQLite as the database, which comes pre-configured with Django for development purposes. There is no need for external database setup, making it ideal for rapid development and testing.
 
@@ -66,7 +66,7 @@ DATABASES = {
 
 Since SQLite does not require complex configurations, you do not need to specify a username, password, or host. The database will be created automatically in the root directory of your project as db.sqlite3 when you run migrations.
 
-5. Apply migrations:
+**5. Apply migrations:**
 
 Once the database is configured, apply the migrations to set up your tables:
 
@@ -76,7 +76,7 @@ python manage.py migrate
 
 ```
 
-6. Start the development server:
+**6. Start the development server:**
 
 Finally, start the Django development server to run the API locally:
 
@@ -101,7 +101,7 @@ The Country Management API provides the following endpoints for interacting with
 
 ## Example Usage
 
-1. To retrieve all countries:
+**1. To retrieve all countries:**
 
 - cURL:
 
@@ -117,7 +117,7 @@ Open Postman and create a new GET request.
 Set the URL to http://localhost:8000/countries/.
 Click Send to retrieve the list of countries.
 
-2. To create a new country:
+**2. To create a new country:**
 
 - cURL:
 
@@ -144,7 +144,7 @@ Paste the following JSON data:
 ```
 Click Send to create the new country.
 
-3. To update a country:
+**3. To update a country:**
 
 - cURL:
 
@@ -171,7 +171,7 @@ Paste the updated JSON data:
 ```
 Click Send to update the country.
 
-4. To delete a country:
+**4. To delete a country:**
 
 - cURL:
 
@@ -191,7 +191,7 @@ Click Send to delete the country.
 
 Contributions are welcome! If you encounter any issues or would like to add new features, feel free to open a pull request.
 
-###Contribution Guidelines:
+### Contribution Guidelines:
 
 - Fork the repository.
 - Create a new branch for your feature or bug fix.
