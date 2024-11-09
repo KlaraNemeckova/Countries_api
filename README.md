@@ -1,6 +1,6 @@
-# Api_challenge
+# Countries_api
 
-The **Api_challenge** API is a Django-based RESTful API designed to manage country data. It allows users to create, edit, and retrieve information about countries.
+The **Countries_api** API is a Django-based RESTful API designed to manage country data. It allows users to create, edit, and retrieve information about countries.
 
 ## Introduction
 
