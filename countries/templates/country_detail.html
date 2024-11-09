@@ -4,12 +4,14 @@
 
 {% block content %}
 
+    <br>
+
     <h1>{{ country.name }}</h1>
 
     <p><strong>Country Code:</strong> {{ country.country_code }}</p>
     <p><strong>Group ID:</strong> {{ country.group_id }}</p>
     <p><strong>Created At:</strong> {{ country.created_at }}</p>
 
-    <a href="{% url 'list_of_countries' %}">Back to the list of countries</a>
+    <a href="{% url 'list_of_countries' %}" class="custom-nav">Back to the list of countries</a>
 
 {% endblock %}

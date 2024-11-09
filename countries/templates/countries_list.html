@@ -17,10 +17,21 @@
     .table th:nth-child(2), .table td:nth-child(2) {
         padding-left: 15px; 
     }
+
+    .country-name-link {
+        color: #242529; 
+        text-decoration: none;
+    }
+    .country-name-link:hover {
+        color: #4188da; 
+    }
 </style>
 
+<br>
 
 <h2>Countries List</h2>
+
+<br>
 
 <table class="table table-striped">
     <thead>
@@ -36,7 +47,7 @@
         <tr>
             <td>{{ country.id }}</td>
             <td>
-                <a href="{% url 'country_detail' country.id %}">{{ country.name }}</a>
+                <a href="{% url 'country_detail' country.id %}" class="country-name-link">{{ country.name }}</a>
             </td>            
             <td>{{ country.country_code }}</td>
             <td>{{ country.group_id }}</td>
@@ -54,7 +65,7 @@
     <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
     {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    &nbsp;&nbsp;<a href="?page={{ page_obj.next_page_number }}">Next</a>&nbsp;
         <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
 </div>

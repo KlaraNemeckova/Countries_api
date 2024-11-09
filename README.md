@@ -20,7 +20,8 @@ The API is built with Django. It utilizes Django REST framework to expose the co
 
 ```
 
-git clone https://github.com/KlaraNemeckova/api_challenge.git cd api_challenge
+git clone https://github.com/KlaraNemeckova/api_challenge.git 
+cd api_challenge
 
 ```
 
@@ -201,5 +202,5 @@ Contributions are welcome! If you encounter any issues or would like to add new 
 
 ## License
 
-This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0/) - see the LICENSE file for details.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/) - see the LICENSE file for details.
 

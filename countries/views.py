@@ -10,19 +10,21 @@ from .serializers import CountrySerializer, CountryCreateSerializer
 def home(request):
     return render(request, "home.html") 
 
-
+# API view for listing countries or creating a new country
 @api_view(['GET', 'POST'])
 def countries_list(request):
     if request.method == 'GET':
         countries = Country.objects.all()
         
-        paginator = Paginator(countries, 50)  
-        page_number = request.GET.get('page')  
-        page_obj = paginator.get_page(page_number)  # stránkované výsledky, které se předají do html nebo JSON
+        paginator = Paginator(countries, 50)  # Paginate with 50 countries per page
+        page_number = request.GET.get('page')  # Get current page number from query
+        page_obj = paginator.get_page(page_number)  # Get the desired page of results 
 
+        # Render HTML or return JSON data
         if request.accepted_renderer.format == 'html':
-            return render(request, 'countries_list.html', {'page_obj': page_obj})  # vrátí stránkovaný list do countries_list.html
+            return render(request, 'countries_list.html', {'page_obj': page_obj})  
 
+        # Serialize data for JSON response
         serializer = CountrySerializer(page_obj, many=True)
         return Response({
             'count': paginator.count,  
@@ -43,10 +45,10 @@ def countries_list(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+# API view for retrieving, updating, or deleting a single country by ID
 @api_view(['GET', 'PUT', 'DELETE'])
 def country_detail(request, id):
-    try:                                       # country = get_object_or_404(Country, pk=id) místo try except
+    try:                                       
         country = Country.objects.get(pk=id)
     except Country.DoesNotExist:
         return Response({'error': 'Country not found'}, status=status.HTTP_404_NOT_FOUND)
