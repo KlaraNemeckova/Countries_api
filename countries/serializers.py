@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Country
+from .countries_by_continent import list_by_continent
 
 
 # Serializer for retrieving and viewing country data
@@ -15,6 +16,18 @@ class CountryCreateSerializer(serializers.ModelSerializer):
         model = Country
         # Fields needed for creating a country record (excluding auto-generated fields)
         fields = ['name', 'country_code'] 
+
+
+class CountryCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Country
+        fields = ['name', 'country_code']
+
+    def validate_country_code(self, value):
+        valid_codes = [code for countries in list_by_continent.values() for code in countries.values()]
+        if value not in valid_codes:
+            raise serializers.ValidationError(f"Invalid country code: {value}")
+        return value
 
 
         

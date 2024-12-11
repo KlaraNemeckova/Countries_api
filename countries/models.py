@@ -13,14 +13,16 @@ class Country(models.Model):
     # Save () method to automatically set group_id based on the continent
     def save(self, *args, **kwargs):
         if self.group_id is None:
+            found = False
             for index, (continent, countries) in enumerate(list_by_continent.items(), start=1):
                 if self.country_code in countries.values():
                     self.group_id = index
+                    found = True
                     break
-            else:
-                raise ValueError("Country does not exist.")
+            if not found:
+                raise ValueError(f"Country code {self.country_code} is invalid.")
+        super().save(*args, **kwargs)
 
-        super().save(*args, **kwargs) 
 
     def __str__(self):
         return self.name

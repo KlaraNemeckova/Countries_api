@@ -18,12 +18,28 @@
         padding-left: 15px; 
     }
 
-    .country-name-link {
-        color: #242529; 
-        text-decoration: none;
+    td {
+    cursor: default;
     }
-    .country-name-link:hover {
-        color: #4188da; 
+
+    .country-link {
+        cursor: pointer;
+        text-decoration: underline;
+        color: #007bff;
+        background-color: #f0f8ff;
+        padding: 2px 5px;
+        border-radius: 4px;
+    }
+
+    .country-link:hover {
+        color: #0056b3;
+        text-decoration: none;
+        background-color: #cce5ff;
+    }
+
+
+    .pagination a {
+        margin: 0 5px; 
     }
 </style>
 
@@ -47,7 +63,7 @@
         <tr>
             <td>{{ country.id }}</td>
             <td>
-                <a href="{% url 'country_detail' country.id %}" class="country-name-link">{{ country.name }}</a>
+                <a href="{% url 'country_detail' country.id %}" class="country-link">{{ country.name }}</a>
             </td>            
             <td>{{ country.country_code }}</td>
             <td>{{ country.group_id }}</td>
@@ -58,17 +74,16 @@
 
 <div class="pagination">
     {% if page_obj.has_previous %}
-        <a href="?page=1">First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        <a href="?page=1">First</a>&nbsp;
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>&nbsp;
     {% endif %}
-    
-    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>&nbsp;
 
     {% if page_obj.has_next %}
-    &nbsp;&nbsp;<a href="?page={{ page_obj.next_page_number }}">Next</a>&nbsp;
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>&nbsp;
         <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
 </div>
 
 {% endblock %}
-
